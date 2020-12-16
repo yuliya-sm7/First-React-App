@@ -3,18 +3,24 @@ import styled from "styled-components";
 
 const Container = styled.div`
     margin: 0 auto;
-    width: 640px;
-    height: 640px;
+    width: 320px;
+    height: 320px;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
 `;
 
-const Field = Array(65).join("*").split("");
+const Cell = styled.div`
+    padding: auto;
+    border: 2px solid black;
+    background-color: ${(props) => (props.theme === "0" ? "green" : "white")};
+`;
 
-const Board: React.FC = () => (
+const Board: React.FC<{cells: Array<Array<string>>}> = (props) => (
     <Container>
-        {Field.map((cell, index) => (
-            <div key={index}>{cell}</div>
+        {props.cells.flat().map((cell, index) => (
+            <Cell key={index} theme={cell}>
+                {cell}
+            </Cell>
         ))}
     </Container>
 );

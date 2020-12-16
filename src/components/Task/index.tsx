@@ -1,6 +1,4 @@
 import List from "components/List";
-import Board from "components/Board";
-import StyledContainer from "components/StyledContainer";
 import React from "react";
 
 const posts = [
@@ -16,21 +14,17 @@ const tasks = [
     "каждую секунду выводить в консоль новое состояние доски."
 ];
 
-const HelloWorld: React.FC = () => (
+const Task: React.FC = () => (
     <>
-        <StyledContainer>
-            <h1>Стажировка</h1>
-            <p>
-                Дана доска размером M × N клеток. Клетка может находиться в одном из двух состояний:
-                1 — живая, 0 — мёртвая. Каждая клетка взаимодействует с восемью соседями. Правила
-                таковы:
-            </p>
-            <List posts={posts}></List>
-            <p>Напишите программу, которая будет:</p>
-            <List posts={tasks}></List>
-        </StyledContainer>
-        <Board></Board>
+        <h1>Жизнь</h1>
+        <p>
+            Дана доска размером M × N клеток. Клетка может находиться в одном из двух состояний: 1 —
+            живая, 0 — мёртвая. Каждая клетка взаимодействует с восемью соседями. Правила таковы:
+        </p>
+        <List posts={posts}></List>
+        <p>Напишите программу, которая будет:</p>
+        <List posts={tasks}></List>
     </>
 );
 
-export default HelloWorld;
+export default Task;

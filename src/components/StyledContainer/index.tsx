@@ -19,7 +19,7 @@ const StyledContainer = styled.div`
     margin: 30px auto;
     font-family: ${fontFamily};
     font-size: ${fontSize};
-    color: ${gray2};
+    color: ${gray1};
 `;
 
 export default StyledContainer;
